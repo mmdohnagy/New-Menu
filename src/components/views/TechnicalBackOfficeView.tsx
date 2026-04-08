@@ -246,7 +246,7 @@ export default function TechnicalBackOfficeView() {
   );
 
   return (
-    <div className="h-[calc(100vh-120px)] flex flex-col gap-6 overflow-y-auto pr-2">
+    <div className="flex flex-col gap-6 pb-20 lg:pb-0">
       {renderTabSwitcher()}
 
       {activeTab === 'technical' ? (
@@ -259,10 +259,10 @@ export default function TechnicalBackOfficeView() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex-1 bg-white dark:bg-zinc-900 rounded-[2.5rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] border border-zinc-100 dark:border-zinc-800 overflow-hidden flex flex-col lg:flex-row min-h-[600px]"
+          className="flex-1 bg-white dark:bg-zinc-900 rounded-[2rem] lg:rounded-[2.5rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] border border-zinc-100 dark:border-zinc-800 flex flex-col lg:flex-row min-h-fit lg:min-h-[600px]"
         >
         {/* Left Side - Immersive Branding & Info */}
-        <div className="lg:w-[380px] bg-zinc-900 dark:bg-black p-10 text-white flex flex-col justify-between relative overflow-hidden shrink-0">
+        <div className="lg:w-[380px] bg-zinc-900 dark:bg-black p-8 lg:p-10 text-white flex flex-col justify-between relative overflow-hidden shrink-0 rounded-t-[2rem] lg:rounded-t-none lg:rounded-l-[2.5rem]">
           <div className="relative z-10">
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
@@ -313,7 +313,7 @@ export default function TechnicalBackOfficeView() {
         </div>
 
         {/* Right Side - Elegant Form */}
-        <div className={cn("flex-1 p-10 lg:p-12 bg-white dark:bg-zinc-900 relative overflow-y-auto", user?.role_name === 'Area Manager' && "hidden")}>
+        <div className={cn("flex-1 p-8 lg:p-12 bg-white dark:bg-zinc-900 relative", user?.role_name === 'Area Manager' && "hidden")}>
           <form onSubmit={handleSubmit} className="w-full space-y-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
               {/* Date Field */}
